@@ -1,2 +1,2 @@
 module Email
-    let toEmail name = ""  
+    let toEmail name = "info@acme.com"  
