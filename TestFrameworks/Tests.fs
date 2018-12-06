@@ -25,7 +25,6 @@ module FsUnitTests =
         let actual = toEmail name
         actual |> should equal expected
 
-
 module UnquoteTests =
 
     open Xunit
@@ -38,3 +37,18 @@ module UnquoteTests =
         let expected = "info@acme.com"
         let actual = toEmail name
         test <@ actual = expected @>
+
+module ExpectoTests =
+
+    open Expecto
+    open Email
+
+    [<Tests>]
+    let tests =
+        test "toEmail with null gives info [at] acme [dot] com" {
+            let name = null
+            let expected = "info@acme.com"
+            let actual = toEmail name
+            Expect.equal actual expected "emails did not match"
+        }
+            
