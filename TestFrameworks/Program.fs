@@ -4,4 +4,4 @@ module Program =
     open TestFrameworks
 
     let [<EntryPoint>] main args = 
-        runTestsWithArgs defaultConfig args ExpectoTests.tests
+        runTestsWithArgs defaultConfig args ExpectoTests.datatests
